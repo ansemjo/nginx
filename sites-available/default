@@ -1,0 +1,12 @@
+server {
+        listen 80 default_server;
+        server_name nas.semjonov.de;
+	rewrite ^ https://$server_name$request_uri? permanent;
+}
+
+server {
+        listen 80;
+        server_name fractal localhost 127.0.0.1 192.168.0.103;
+	rewrite ^ https://$server_name$request_uri? permanent;
+}
+

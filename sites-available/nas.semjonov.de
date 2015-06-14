@@ -1,0 +1,48 @@
+server {
+	listen 443 default_server;
+	server_name nas.semjonov.de;
+
+	proxy_set_header	X-Forwarded-For $remote_addr;
+
+	root	/var/www;
+	index	index.php index.html index.htm;
+
+	ssl	on;
+
+        ssl_certificate         /etc/ssl/certs/nas.semjonov.de.crt;
+        ssl_certificate_key     /etc/ssl/private/nas.semjonov.de.key;
+        ssl_dhparam             /etc/ssl/dhparams.pem;
+
+        ssl_session_timeout 5m;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+	ssl_ciphers "EECDH+ECDSA+AESGCM:EECDH+aRSA+AESGCM:EECDH+ECDSA+SHA256:EDH+aRSA:EECDH:RC4:!aNULL:!eNULL:!LOW:!3DES:!MD5:!EXP:!PSK:!SRP:!DSS";
+        ssl_prefer_server_ciphers on;
+
+
+
+
+	###	php Handler
+	include		locations/php_handler;
+	
+	###	www-root
+	include         locations/webroot;
+
+	###	ownCloud
+	include		locations/owncloud;
+
+	###	MediaBrowser
+	include         locations/mediabrowser;
+
+	###	sysUsage
+	include		locations/sysusage;
+
+	###	GIT Repository
+	include         locations/git;
+
+	###	phpMyAdmin
+	include         locations/phpmyadmin;
+
+	###	SeaFile
+	include		locations/seafile;
+
+}

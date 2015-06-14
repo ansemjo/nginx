@@ -1,0 +1,4 @@
+location /mediabrowser/ {
+                proxy_pass http://localhost:8096;
+                include proxy_params;
+        }
