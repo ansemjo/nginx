@@ -1,5 +1,5 @@
 server {
-	listen 443 default_server;
+	listen 443;
 	server_name nas.semjonov.de;
 
 	proxy_set_header	X-Forwarded-For $remote_addr;
