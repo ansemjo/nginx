@@ -1,4 +1,8 @@
-location /git/index.cgi {
+	location ~ /\.git {
+		deny all;
+	}
+
+	location /git/index.cgi {
                 root    /usr/share/gitweb/;
                 include fastcgi_params;
                 gzip    off;

@@ -1,0 +1,29 @@
+### Sun Jul 19 15:34:43 CEST 2015
+
+### emby
+include /etc/nginx/locations/emby;
+
+### ether
+include /etc/nginx/locations/ether;
+
+### git
+include /etc/nginx/locations/git;
+
+### owncloud
+include /etc/nginx/locations/owncloud;
+
+### php_handler
+include /etc/nginx/locations/php_handler;
+
+### phpmyadmin
+include /etc/nginx/locations/phpmyadmin;
+
+### seafile
+include /etc/nginx/locations/seafile;
+
+### sysusage
+include /etc/nginx/locations/sysusage;
+
+### webroot
+include /etc/nginx/locations/webroot;
+

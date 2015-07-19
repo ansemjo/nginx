@@ -10,7 +10,7 @@ server {
 	root	/var/www;
 	index	index.php index.html index.htm;
 
-	include		locations/includeall;
+	include		locations/.includeall;
 }
 
 server {
@@ -21,6 +21,6 @@ server {
 	root	/var/www;
 	index	index.php index.html index.htm;
 	
-	include		locations/includeall;
+	include		locations/.includeall;
 }
 
