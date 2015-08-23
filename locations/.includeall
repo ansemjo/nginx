@@ -1,4 +1,4 @@
-### Sun Jul 19 15:34:43 CEST 2015
+### Sun Aug 23 22:09:09 CEST 2015
 
 ### emby
 include /etc/nginx/locations/emby;
@@ -8,6 +8,9 @@ include /etc/nginx/locations/ether;
 
 ### git
 include /etc/nginx/locations/git;
+
+### munin
+include /etc/nginx/locations/munin;
 
 ### owncloud
 include /etc/nginx/locations/owncloud;

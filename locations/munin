@@ -1,0 +1,5 @@
+	location /munin {
+                alias    /var/cache/munin/www/;
+		auth_basic              "Munin Monitor";
+		auth_basic_user_file    /etc/munin/.htpasswd;
+	}

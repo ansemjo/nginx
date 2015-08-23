@@ -1,4 +1,4 @@
  location /sysusage/ {
-                auth_basic              "Access to Sysusage logs is restricted!";
-                auth_basic_user_file    /var/www/sysusage/.htpasswd;
+         #       auth_basic              "Access to Sysusage logs is restricted!";
+         #       auth_basic_user_file    /var/www/sysusage/.htpasswd;
         }
