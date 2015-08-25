@@ -1,4 +1,6 @@
 location / {
-                try_files $uri $uri/ =404;
+		expires -1;
+		alias /var/www/index/;
+		try_files $uri $uri/ =404;
         }
 
