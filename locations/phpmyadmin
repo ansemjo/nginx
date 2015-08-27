@@ -1,4 +1,4 @@
-	location /phpmyadmin/ {
+	location /phpmyadmin {
 		auth_basic              "Access restricted.";
 		auth_basic_user_file    /var/www/phpmyadmin/.htpasswd;
 	}

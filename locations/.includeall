@@ -1,4 +1,7 @@
-### Sun Aug 23 22:09:09 CEST 2015
+### Thu Aug 27 22:02:50 CEST 2015
+
+### cookie
+include /etc/nginx/locations/cookie;
 
 ### emby
 include /etc/nginx/locations/emby;
@@ -23,9 +26,6 @@ include /etc/nginx/locations/phpmyadmin;
 
 ### seafile
 include /etc/nginx/locations/seafile;
-
-### sysusage
-include /etc/nginx/locations/sysusage;
 
 ### webroot
 include /etc/nginx/locations/webroot;

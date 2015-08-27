@@ -1,4 +1,4 @@
-location /owncloud/ {
+location /owncloud {
 
                 client_max_body_size 10G;
                 fastcgi_buffers 64 4K;
