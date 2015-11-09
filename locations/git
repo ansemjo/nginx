@@ -10,6 +10,9 @@ location /git {
     index   index.php;
 
     try_files $uri @gitlist;
+
+    auth_basic              "Something going on here ...";
+    auth_basic_user_file    /var/www/auth.db;
 }
 
 location = /git/robots.txt {
