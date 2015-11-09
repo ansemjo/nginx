@@ -1,16 +1,10 @@
-### Fri Aug 28 00:56:29 CEST 2015
-
-### cookie
-include /etc/nginx/locations/cookie;
-
-### emby
-include /etc/nginx/locations/emby;
-
-### ether
-include /etc/nginx/locations/ether;
+### Sun  8 Nov 21:29:02 CET 2015
 
 ### git
 include /etc/nginx/locations/git;
+
+### grafana
+include /etc/nginx/locations/grafana;
 
 ### munin
 include /etc/nginx/locations/munin;
@@ -23,9 +17,6 @@ include /etc/nginx/locations/php_handler;
 
 ### phpmyadmin
 include /etc/nginx/locations/phpmyadmin;
-
-### seafile
-include /etc/nginx/locations/seafile;
 
 ### webroot
 include /etc/nginx/locations/webroot;
