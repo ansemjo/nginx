@@ -1,4 +1,7 @@
-### Sun  8 Nov 21:29:02 CET 2015
+### Tue 10 Nov 17:39:51 CET 2015
+
+### cookie
+include /etc/nginx/locations/cookie;
 
 ### git
 include /etc/nginx/locations/git;
