@@ -30,4 +30,13 @@ server {
 	###	INCLUDE ALL
 	include		locations/.includeall;
 
+    location /restricted {
+        error_page 401 /cookie?goto=restricted;
+
+        auth_request /cookie/;
+
+        alias /var/www/index/restricted;
+        index index.html;
+    }
+
 }
