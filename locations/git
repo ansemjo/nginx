@@ -6,13 +6,17 @@ location ~ /\.git {
 # config for gitlist
 
 location /git {
+
+    error_page 401 /cookie?goto=git;
+    auth_request /cookie/;
+
     root    /var/www/;
     index   index.php;
 
     try_files $uri @gitlist;
 
-    auth_basic              "Something going on here ...";
-    auth_basic_user_file    /var/www/auth.db;
+#    auth_basic              "Something going on here ...";
+#    auth_basic_user_file    /var/www/auth.db;
 }
 
 location = /git/robots.txt {
