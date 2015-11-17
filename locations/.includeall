@@ -1,4 +1,4 @@
-### Tue 10 Nov 17:39:51 CET 2015
+### Thu 12 Nov 10:09:09 CET 2015
 
 ### cookie
 include /etc/nginx/locations/cookie;
@@ -12,14 +12,14 @@ include /etc/nginx/locations/grafana;
 ### munin
 include /etc/nginx/locations/munin;
 
+### mysql
+include /etc/nginx/locations/mysql;
+
 ### owncloud
 include /etc/nginx/locations/owncloud;
 
 ### php_handler
 include /etc/nginx/locations/php_handler;
-
-### phpmyadmin
-include /etc/nginx/locations/phpmyadmin;
 
 ### webroot
 include /etc/nginx/locations/webroot;

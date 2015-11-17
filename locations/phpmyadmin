@@ -1,5 +1,0 @@
-	location /phpmyadmin {
-        root                    /usr/share/;
-#		auth_basic              "Access restricted.";
-#		auth_basic_user_file    /var/www/phpmyadmin/.htpasswd;
-	}
