@@ -1,9 +1,0 @@
-	location /munin {
-	    error_page 401 /cookie?goto=munin;
-        auth_request /cookie/;
-    
-        expires 10m;
-        alias    /var/cache/munin/www/;
-    #    auth_basic              "Something going on here ...";
-    #    auth_basic_user_file    /var/www/auth.db;
-	}

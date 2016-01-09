@@ -1,6 +1,0 @@
-location /graphs {
-    proxy_pass          http://localhost:3000;
-    rewrite             ^/graphs/(.*)   /$1 break;
-    proxy_set_header    Host $host;
-    proxy_set_header    Authorization "";
-}
