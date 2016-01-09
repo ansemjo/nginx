@@ -1,4 +1,28 @@
 server {
+    listen 80 default_server;
+    server_name www.semjonov.de;
+	rewrite_log on;
+
+	rewrite ^[\/]+[git|emby|sysusage|owncloud]+[\/]*(.*)$ https://$server_name$request_uri? last;
+
+	root	/var/www;
+	index	index.php index.html index.htm;
+
+	include		locations/.includeall;
+}
+
+server {
+    listen 80;
+    server_name fractal localhost 127.0.0.1 192.168.0.103;
+	rewrite ^ http://www.semjonov.de$request_uri? permanent;
+
+	root	/var/www;
+	index	index.php index.html index.htm;
+
+	include		locations/.includeall;
+}
+
+server {
 	listen 443;
 	server_name www.semjonov.de;
 
@@ -19,24 +43,10 @@ server {
 	ssl_prefer_server_ciphers on;
 	ssl_session_cache shared:SSL:10m;
 	add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; preload";
-#	add_header X-Frame-Options DENY;
 	add_header X-Content-Type-Options nosniff;
 	ssl_stapling on; # Requires nginx >= 1.3.7
 	ssl_stapling_verify on; # Requires nginx => 1.3.7
 
-
-
-
-	###	INCLUDE ALL
 	include		locations/.includeall;
-
-    location /restricted {
-        error_page 401 /cookie?goto=restricted;
-
-        auth_request /cookie/;
-
-        alias /var/www/index/restricted;
-        index index.html;
-    }
 
 }
