@@ -1,28 +1,4 @@
 server {
-    listen 80 default_server;
-    server_name www.semjonov.de;
-	rewrite_log on;
-
-	rewrite ^[\/]+[git|cookie|mysql|owncloud]+[\/]*(.*)$ https://$server_name$request_uri? last;
-
-	root	/var/www;
-	index	index.php index.html index.htm;
-
-	include		locations/.includeall;
-}
-
-server {
-    listen 80;
-    server_name fractal localhost 127.0.0.1 192.168.0.103;
-	rewrite ^ http://www.semjonov.de$request_uri? permanent;
-
-	root	/var/www;
-	index	index.php index.html index.htm;
-
-	include		locations/.includeall;
-}
-
-server {
 	listen 443;
 	server_name www.semjonov.de;
 
