@@ -1,5 +1,6 @@
 location /cookie {
-		alias /var/www/cookie;
-		try_files $uri $uri/ =404;
-        }
 
+    alias /var/www/cookie;
+    try_files $uri $uri/ =404;
+
+}

@@ -1,7 +1,8 @@
-	location /mysql {
+location /mysql {
 
-        error_page 401 /cookie?goto=mysql;
-        auth_request /cookie/;
-        
-        alias                   /usr/share/phpmyadmin;
-	}
+    error_page 401 /cookie?goto=mysql;
+    auth_request /cookie/;
+     
+    alias /usr/share/phpmyadmin;
+
+}

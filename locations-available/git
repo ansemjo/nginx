@@ -15,35 +15,8 @@ location /git {
 
     try_files $uri @gitlist;
 
-#    auth_basic              "Something going on here ...";
-#    auth_basic_user_file    /var/www/auth.db;
 }
-
-location = /git/robots.txt {
-    allow all;
-    log_not_found off;
-    access_log off;
- }
 
 location @gitlist {
         rewrite ^/.*$ /git/index.php;
 }
-
-###############################
-# below the config for gitweb
-
-#	location /git/index.cgi {
-#                root    /usr/share/gitweb/;
-#                include fastcgi_params;
-#                gzip    off;
-#                fastcgi_param   SCRIPT_NAME $uri;
-#                fastcgi_param   GITWEB_CONFIG /etc/gitweb.conf;
-#                fastcgi_pass    unix:/var/run/fcgiwrap.socket;
-#        }
-#
-#        location /git {
-#                root    /usr/share/gitweb/;
-#                index   index.cgi;
-#                auth_basic              "This git browser has restricted access!";
-#                auth_basic_user_file    /usr/share/gitweb/git/.htpasswd;
-#        }
