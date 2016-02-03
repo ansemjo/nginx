@@ -12,7 +12,7 @@ location ~ \.php/?.*$ {
     fastcgi_param PATH_INFO $path_info;
 
     fastcgi_index index.php;
-    include parameters/fastcgi;
+    include params.d/fastcgi;
 
     fastcgi_pass unix:/var/run/php5-fpm.sock;
 

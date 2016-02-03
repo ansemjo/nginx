@@ -6,13 +6,13 @@ server {
     server_name www.semjonov.de;
 
     root	/var/www/index;
-    include parameters/proxy;
+    include params.d/proxy;
     index	index.php index.html index.htm;
 
     ssl	on;
     ssl_certificate         /etc/ssl/certs/www.semjonov.de.crt;
     ssl_certificate_key     /etc/ssl/private/www.semjonov.de.key;
-    include parameters/ssl;
+    include params.d/ssl;
 
     include		locations-enabled/www.semjonov.de/*;
 
