@@ -5,12 +5,9 @@ server {
 
     server_name www.semjonov.de tor.semjonov.de fractal.local;
 
-    location '/.well-known/acme-challenge' {
-        default_type "text/plain";
-        root /tmp/letsencrypt-acme;
-    }
+    include locations-enabled/default/*;
 
-	location / {
+    location / {
         return  301 https://$host$request_uri;
     }
 
