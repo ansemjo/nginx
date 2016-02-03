@@ -30,6 +30,8 @@ location /owncloud {
 
     rewrite ^(/core/doc/[^\/]+/)$ $1/index.php;
 
+    root /var/www;
+    include php_handler;
     try_files $uri $uri/ index.php;
 
 }

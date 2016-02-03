@@ -10,9 +10,10 @@ location /git {
     error_page 401 /cookie?goto=git;
     auth_request /cookie/;
 
-    root    /var/www/;
-    index   index.php;
+    root    /var/www;
+    include php_handler;
 
+    index   index.php;
     try_files $uri @gitlist;
 
 }

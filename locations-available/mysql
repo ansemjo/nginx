@@ -1,8 +1,16 @@
-location /mysql {
+location /phpmyadmin {
 
-    error_page 401 /cookie?goto=mysql;
-    auth_request /cookie/;
-     
-    alias /usr/share/phpmyadmin;
+    error_page 401 /cookie?goto=phpmyadmin;
+    auth_request /cookie/;   
+
+    root /usr/share;
+    include php_handler;
+    try_files $uri $uri/ index.php;
+
+}
+
+location ~ ^/mysql {
+
+    rewrite ^/mysql(.*)$ /phpmyadmin$1 permanent;
 
 }

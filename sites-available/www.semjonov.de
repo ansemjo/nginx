@@ -5,7 +5,7 @@ server {
 
     server_name www.semjonov.de;
 
-    root	/var/www;
+    root	/var/www/index;
     include proxy_params;
     index	index.php index.html index.htm;
 

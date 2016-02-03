@@ -1,13 +1,10 @@
 location / {
 
-    location ~ \.php$ {
-        include fastcgi_params;
-        fastcgi_param  SCRIPT_FILENAME    /var/www/index/$fastcgi_script_name;
-        fastcgi_pass unix:/var/run/php5-fpm.sock;
-    }
-
     expires -1;
+
     root /var/www/index/;
+    include php_handler;
+
     try_files $uri $uri/ =404;
 
 }
