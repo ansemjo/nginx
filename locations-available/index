@@ -3,7 +3,7 @@ location / {
     expires -1;
 
     root /var/www/index/;
-    include php_handler;
+    include locations-available/php_handler;
 
     try_files $uri $uri/ =404;
 

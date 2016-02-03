@@ -11,7 +11,7 @@ location /git {
     auth_request /cookie/;
 
     root    /var/www;
-    include php_handler;
+    include locations-available/php_handler;
 
     index   index.php;
     try_files $uri @gitlist;

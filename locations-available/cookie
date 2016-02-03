@@ -1,7 +1,7 @@
 location /cookie {
 
     root /var/www;
-    include php_handler;
+    include locations-available/php_handler;
     try_files $uri $uri/ =404;
 
 }
