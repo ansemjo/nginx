@@ -1,23 +1,17 @@
 server {
+
     listen 80 default_server;
-    server_name www.semjonov.de;
-	rewrite_log on;
+    listen [::]:80 default_server ipv6only=on;
 
-	rewrite ^[\/]+[git|cookie|mysql|owncloud]+[\/]*(.*)$ https://$server_name$request_uri? last;
+    server_name www.semjonov.de tor.semjonov.de fractal.local;
 
-	root	/var/www;
-	index	index.php index.html index.htm;
+    location '/.well-known/acme-challenge' {
+        default_type "text/plain";
+        root /tmp/letsencrypt-acme;
+    }
 
-	include		locations/.includeall;
-}
+	location / {
+        return  301 https://$host$request_uri;
+    }
 
-server {
-    listen 80;
-    server_name fractal localhost 127.0.0.1 192.168.0.103;
-	rewrite ^ http://www.semjonov.de$request_uri? permanent;
-
-	root	/var/www;
-	index	index.php index.html index.htm;
-
-	include		locations/.includeall;
 }
