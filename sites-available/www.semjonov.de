@@ -14,6 +14,7 @@ server {
     ssl_certificate_key     /etc/ssl/private/www.semjonov.de.key;
     include params.d/ssl;
 
+    include		locations-enabled/common/*;
     include		locations-enabled/www.semjonov.de/*;
 
 }

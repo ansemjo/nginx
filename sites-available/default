@@ -5,7 +5,7 @@ server {
 
     server_name www.semjonov.de tor.semjonov.de fractal.local;
 
-    include locations-enabled/default/*;
+    include locations-enabled/common/*;
 
     location / {
         return  301 https://$host$request_uri;
