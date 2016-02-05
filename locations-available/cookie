@@ -5,3 +5,7 @@ location /cookie {
     try_files $uri $uri/ =404;
 
 }
+
+# EXAMPLE:
+#    error_page 401 /cookie?goto=phpmyadmin;
+#    auth_request /cookie/;   
