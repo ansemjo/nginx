@@ -8,9 +8,3 @@ location /phpmyadmin {
     try_files $uri $uri/ index.php;
 
 }
-
-location ~ ^/mysql {
-
-    rewrite ^/mysql(.*)$ /phpmyadmin$1 permanent;
-
-}
