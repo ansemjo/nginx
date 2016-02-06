@@ -3,9 +3,9 @@ server {
     listen 443;
     listen [::]:443;
 
-    server_name tor.semjonov.de;
+    server_name git.semjonov.de;
 
-    root	/var/www/torinfo;
+    root	/opt/gitlab/embedded/service/gitlab-rails/public;
     include params.d/proxy;
     index	index.html index.htm;
 
@@ -15,6 +15,6 @@ server {
     include params.d/ssl;
 
     include		locations-enabled/common/*;
-    include		locations-enabled/tor.semjonov.de/*;
+    include		locations-enabled/git.semjonov.de/*;
 
 }
