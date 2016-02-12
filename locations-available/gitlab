@@ -1,18 +1,18 @@
-location ~ / {
+location / {
 
     root /opt/gitlab/embedded/service/gitlab-rails/public;
-    try_files $uri $uri/index.html $uri.html @gitlab;
+    try_files $uri $uri/index.html $uri.html @gitlab-workhorse;
 
 }
 
-location @gitlab {
+location @gitlab-workhorse {
 
     include params.d/proxy;
 
     proxy_read_timeout 300;
     proxy_connect_timeout 300;
-    proxy_redirect     off;
+    proxy_redirect off;
 
-    proxy_pass http://gitlab-socket;
+    proxy_pass http://gitlab-workhorse;
 
 }
