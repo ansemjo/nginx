@@ -6,29 +6,31 @@ After trying a few approaches I decided to finally clean up the mess and do as m
 
 ## folders & files explained
 
-__`conf.d/`__
+### `conf.d/`
 Configuration files that have to be included in the http block. Applies to all servers and subdomains.
 
-__`locations-available/`__
+
+### `locations-available/`
 Location blocks that can be used in server blocks. Usually one 'service' per file, with multiple location blocks possible.
 
 _note:_ `php_socket` has no `location { ... }` brackets, it must be included inside of another location block. `php_handler` simply wraps this into a location regex that matches all *.php files - everywhere. This is a simple variant to enable fastcgi when the scripts lie in the appropriate subfolder of the root of the server. Otherwise `php_socket` has to be used in a more precisely matching location, as is the case with phpMyAdmin without an appropriate symlink.
 
-__`locations-enabled/`__
+### `locations-enabled/`
+
 Locations to enable per server. Each subdirectory corresponding to the server / subdomain name contains symlinks to the needed files in `locations-available`. Those folders shall be included in server blocks.
 
-__`params.d/`__
+### `params.d/`
 Common parameters, like proxy, ssl or fastcgi settings.
 
-__`sites-available/`__
+### `sites-available/`
 Available server and subdomain blocks.
 Here, the `default` server catches all http connections on port 80 and redirects to the https version.
 
-__`sites-enabled/`__
+### `sites-enabled/`
 Symlinks to files in `sites-available` of server and subdomains to enable. This folder is included in `nginx.conf`.
 
-__`letsencrypt.conf`__
+### `letsencrypt.conf`
 Settings for auto-renewal of [Let's Encrypt](https://letsencrypt.org/) certificates. For use with 
 
-__`nginx.conf`__
+### `nginx.conf`
 Main configuration file, which is loaded by nginx and includes the rest.
