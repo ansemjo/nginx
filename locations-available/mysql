@@ -1,3 +1,6 @@
+# currently, this needs a symlink "mysql -> ./" in /usr/share/phpmyadmin"
+# probably the update to nginx/testing broke something ...
+
 location /mysql {
 
     alias /usr/share/phpmyadmin;
