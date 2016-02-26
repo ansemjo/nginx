@@ -5,7 +5,7 @@ server {
 
     server_name www.semjonov.de;
 
-    root	/var/www/picocms;
+    root	/var/www/common;
     include params.d/proxy;
     index	index.php index.html index.htm;
 
