@@ -1,7 +1,6 @@
 location / {
 
-    root /var/www/ghost/content/themes/casper_edit;
-    try_files $uri $uri.html @ghostnode;
+    try_files $uri @ghostnode;
 
 }
 
