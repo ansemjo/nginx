@@ -1,0 +1,13 @@
+# Deny all robots
+location ^~ /robots.txt {
+
+    return 200 "User-agent: *\nDisallow: /";
+
+}
+
+# Optionally deny access to sitemap.xml
+location ^~ /sitemap.xml {
+
+    return 404;
+
+}
