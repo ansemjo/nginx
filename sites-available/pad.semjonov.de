@@ -5,7 +5,7 @@ server {
 
     server_name pad.semjonov.de;
 
-    root	/var/www/.common;
+    root	/var/www/common;
     include params.d/proxy;
     index	index.html index.htm;
 

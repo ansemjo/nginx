@@ -1,6 +1,6 @@
 location /.well-known/acme-challenge {
 
     default_type "text/plain";
-    root /var/www/.common;
+    root /var/www/common;
 
 }
