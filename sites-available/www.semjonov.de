@@ -5,6 +5,10 @@ server {
 
     server_name www.semjonov.de;
 
+    if ($host != "$server_name") {
+        return  302 https://$server_name$request_uri;
+    }
+
     root	/var/www/common;
     include params.d/proxy;
     index	index.php index.html index.htm;

@@ -3,8 +3,6 @@ server {
     listen 80 default_server;
     listen [::]:80 default_server ipv6only=on;
 
-    server_name www.semjonov.de tor.semjonov.de fractal.local;
-
     include locations-enabled/common/*;
 
     location / {
