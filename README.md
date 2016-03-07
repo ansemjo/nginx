@@ -22,12 +22,12 @@ Locations to enable per server. Each subdirectory corresponding to the server / 
 ### `params.d/`
 Common parameters, like proxy, ssl or fastcgi settings.
 
-### `sites-available/`
+### `virtualhosts/`
 Available server and subdomain blocks.
 Here, the `default` server catches all http connections on port 80 and redirects to the https version.
 
-### `sites-enabled/`
-Symlinks to files in `sites-available` of server and subdomains to enable. This folder is included in `nginx.conf`.
+### `virtualhosts/enabled/`
+Symlinks to files in `virtualhosts` of server and subdomains to enable. This folder is included in `nginx.conf`.
 
 ### `letsencrypt.conf`
 Settings for auto-renewal of [Let's Encrypt](https://letsencrypt.org/) certificates. For use with 
