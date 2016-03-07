@@ -19,7 +19,7 @@ _note:_ `php_socket` has no `location { ... }` brackets, it must be included ins
 
 Locations to enable per server. Each subdirectory corresponding to the server / subdomain name contains symlinks to the needed files in `locations/`. Those folders shall be included in server blocks.
 
-### `params.d/`
+### `parameters/`
 Common parameters, like proxy, ssl or fastcgi settings.
 
 ### `virtualhosts/`

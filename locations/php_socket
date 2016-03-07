@@ -17,4 +17,4 @@ fastcgi_param PATH_INFO $path_info;
 
 fastcgi_pass unix:/var/run/php5-fpm.sock;
 fastcgi_index index.php;
-include params.d/fastcgi;
+include parameters/fastcgi;
