@@ -1,8 +1,6 @@
 server {
 
-    listen 443;
     listen [::]:443;
-
     server_name tor.semjonov.de;
 
     root    /var/www/torinfo;
@@ -11,5 +9,12 @@ server {
     include snippets/ssl_letsencrypt;
     include locations/enabled/common/*;
     include locations/enabled/tor.semjonov.de/*;
+
+}
+
+server {
+
+    server_name tor.semjonov.de;
+    include snippets/redirect_to_https;
 
 }

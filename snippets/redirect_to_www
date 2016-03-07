@@ -1,0 +1,3 @@
+location / {
+    return 302 $scheme://www.semjonov.de$request_uri;
+}

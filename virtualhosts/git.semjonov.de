@@ -1,8 +1,6 @@
 server {
 
-    listen 443;
     listen [::]:443;
-
     server_name git.semjonov.de;
 
     root    /opt/gitlab/embedded/service/gitlab-rails/public;
@@ -11,5 +9,12 @@ server {
     include snippets/ssl_letsencrypt;
     include locations/enabled/common/*;
     include locations/enabled/git.semjonov.de/*;
+
+}
+
+server {
+
+    server_name git.semjonov.de;
+    include snippets/redirect_to_https;
 
 }

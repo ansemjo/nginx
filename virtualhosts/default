@@ -1,12 +1,16 @@
 server {
 
-    listen 80 default_server;
-    listen [::]:80 default_server ipv6only=on;
+    listen [::]:80 default_server ipv6only=off;
 
-    include locations/enabled/common/*;
+    include snippets/redirect_to_www;
 
-    location ^~ / {
-        return  301 https://$host$request_uri;
-    }
+}
+
+server {
+
+    listen [::]:443 default_server ipv6only=off;
+
+    include snippets/ssl_comodo;
+    include snippets/redirect_to_www;
 
 }
