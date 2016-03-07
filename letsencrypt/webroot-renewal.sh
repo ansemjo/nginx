@@ -2,9 +2,10 @@
 # from: https://gist.githubusercontent.com/thisismitch/e1b603165523df66d5cc/
 
 echo -e "\n[ DATE ] $(date)"
+cd $(dirname "$(readlink -f "$0")")
 
 web_service='nginx.service'
-config_file="/etc/nginx/letsencrypt.conf"
+config_file="webroot-renewal.conf"
 
 le_path='/opt/letsencrypt'
 exp_limit=30;
