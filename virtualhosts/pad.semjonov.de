@@ -5,16 +5,12 @@ server {
 
     server_name pad.semjonov.de;
 
-    root	/var/www/common;
+    root    /var/www/common;
+    index   index.html index.htm;
+
     include params.d/proxy;
-    index	index.html index.htm;
-
-    ssl	on;
-    ssl_certificate         /etc/letsencrypt/live/www.semjonov.de/fullchain.pem;
-    ssl_certificate_key     /etc/letsencrypt/live/www.semjonov.de/privkey.pem;
-    include params.d/ssl;
-
-    include		locations/enabled/common/*;
-    include		locations/enabled/pad.semjonov.de/*;
+    include snippets/ssl_letsencrypt;
+    include locations/enabled/common/*;
+    include locations/enabled/pad.semjonov.de/*;
 
 }

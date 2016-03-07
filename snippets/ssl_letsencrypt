@@ -1,0 +1,6 @@
+# for include in a server block
+
+ssl	on;
+ssl_certificate         /etc/letsencrypt/live/www.semjonov.de/fullchain.pem;
+ssl_certificate_key     /etc/letsencrypt/live/www.semjonov.de/privkey.pem;
+include params.d/ssl;

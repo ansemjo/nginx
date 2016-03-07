@@ -1,0 +1,6 @@
+# for include in a server block
+
+ssl	on;
+ssl_certificate         /etc/ssl/certs/www.semjonov.de.crt;
+ssl_certificate_key     /etc/ssl/private/www.semjonov.de.key;
+include params.d/ssl;

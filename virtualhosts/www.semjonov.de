@@ -9,16 +9,12 @@ server {
         return  302 https://$server_name$request_uri;
     }
 
-    root	/var/www/common;
+    root    /var/www/common;
+    index   index.php index.html index.htm;
+
     include params.d/proxy;
-    index	index.php index.html index.htm;
-
-    ssl	on;
-    ssl_certificate         /etc/ssl/certs/www.semjonov.de.crt;
-    ssl_certificate_key     /etc/ssl/private/www.semjonov.de.key;
-    include params.d/ssl;
-
-    include		locations/enabled/common/*;
-    include		locations/enabled/www.semjonov.de/*;
+    include snippets/ssl_comodo;
+    include locations/enabled/common/*;
+    include locations/enabled/www.semjonov.de/*;
 
 }

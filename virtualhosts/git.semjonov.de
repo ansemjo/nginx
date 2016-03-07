@@ -5,16 +5,12 @@ server {
 
     server_name git.semjonov.de;
 
-    root	/opt/gitlab/embedded/service/gitlab-rails/public;
+    root    /opt/gitlab/embedded/service/gitlab-rails/public;
+    index   index.html index.htm;
+
     include params.d/proxy;
-    index	index.html index.htm;
-
-    ssl	on;
-    ssl_certificate         /etc/letsencrypt/live/www.semjonov.de/fullchain.pem;
-    ssl_certificate_key     /etc/letsencrypt/live/www.semjonov.de/privkey.pem;
-    include params.d/ssl;
-
-    include		locations/enabled/common/*;
-    include		locations/enabled/git.semjonov.de/*;
+    include snippets/ssl_letsencrypt;
+    include locations/enabled/common/*;
+    include locations/enabled/git.semjonov.de/*;
 
 }
