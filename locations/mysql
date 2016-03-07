@@ -17,7 +17,7 @@ location /mysql {
     }
 
     location ~ /mysql/(.+\.php)$ {
-        include locations-available/php_socket;
+        include locations//php_socket;
     }
 
 }

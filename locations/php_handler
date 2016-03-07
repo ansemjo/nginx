@@ -3,5 +3,5 @@
 # i.e. http://.../cloud/ needs to be in /var/www/cloud/ etc.
 
 location ~ \.php/?.*$ {
-    include locations-available/php_socket;
+    include locations//php_socket;
 }

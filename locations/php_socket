@@ -1,7 +1,7 @@
 # use something like the following in your location to include php:
 #
 #   location ~ ^/alias_here/\.php/?.*$ {
-#       include locations-available/php_socket;
+#       include locations//php_socket;
 #   }
 
 # regex to split $uri to $fastcgi_script_name and $fastcgi_path

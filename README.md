@@ -10,14 +10,14 @@ After trying a few approaches I decided to finally clean up the mess and do as m
 Configuration files that have to be included in the http block. Applies to all servers and subdomains.
 
 
-### `locations-available/`
+### `locations//`
 Location blocks that can be used in server blocks. Usually one 'service' per file, with multiple location blocks possible.
 
 _note:_ `php_socket` has no `location { ... }` brackets, it must be included inside of another location block. `php_handler` simply wraps this into a location regex that matches all *.php files - everywhere. This is a simple variant to enable fastcgi when the scripts lie in the appropriate subfolder of the root of the server. Otherwise `php_socket` has to be used in a more precisely matching location, as is the case with phpMyAdmin without an appropriate symlink.
 
-### `locations-enabled/`
+### `locations/enabled/`
 
-Locations to enable per server. Each subdirectory corresponding to the server / subdomain name contains symlinks to the needed files in `locations-available`. Those folders shall be included in server blocks.
+Locations to enable per server. Each subdirectory corresponding to the server / subdomain name contains symlinks to the needed files in `locations/`. Those folders shall be included in server blocks.
 
 ### `params.d/`
 Common parameters, like proxy, ssl or fastcgi settings.
