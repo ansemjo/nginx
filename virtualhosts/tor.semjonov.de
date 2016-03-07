@@ -8,7 +8,6 @@ server {
     root    /var/www/torinfo;
     index   index.html index.htm;
 
-    include params.d/proxy;
     include snippets/ssl_letsencrypt;
     include locations/enabled/common/*;
     include locations/enabled/tor.semjonov.de/*;
