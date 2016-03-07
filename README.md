@@ -6,7 +6,7 @@ After trying a few approaches I decided to finally clean up the mess and do as m
 
 ## folders & files explained
 
-### `conf.d/`
+### `config/`
 Configuration files that have to be included in the http block. Applies to all servers and subdomains.
 
 
