@@ -1,3 +1,3 @@
-location / {
-    return 302 $scheme://$hostname$request_uri; # not sure if this works
+if ($host != $hostname) {
+    return 302 $scheme://$hostname$request_uri;
 }
