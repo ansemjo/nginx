@@ -1,9 +1,0 @@
-[Unit]
-Description=Weekly SSL cert check/renewal
-
-[Timer]
-OnCalendar=Thu 00:03
-Persistent=true
-
-[Install]
-WantedBy=timers.target
