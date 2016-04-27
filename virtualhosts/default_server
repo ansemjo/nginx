@@ -1,6 +1,7 @@
 server {
 
     listen [::]:80 default_server ipv6only=off;
+    server_name _;
 
     include snippets/redirect_to_www;
 
@@ -9,8 +10,9 @@ server {
 server {
 
     listen [::]:443 default_server ipv6only=off;
+    server_name _;
 
-    include snippets/ssl_comodo;
+    include snippets/ssl_letsencrypt;
     include snippets/redirect_to_www;
 
 }

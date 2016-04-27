@@ -1,0 +1,20 @@
+server {
+
+    listen [::]:80;
+    server_name TEMPLATE.FQDN;
+
+    include snippets/redirect_to_https;
+}
+
+server {
+
+    listen [::]:443;
+    server_name TEMPLATE.FQDN;
+
+    root    /var/www/common;
+    index   index.php index.html index.htm index.txt;
+
+    include locations/enabled/common/*;
+    include locations/enabled/TEMPLATE.FQDN/*;
+
+}

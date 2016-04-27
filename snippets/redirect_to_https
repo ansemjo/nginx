@@ -1,2 +1,2 @@
-listen [::]:80;
+# redirect to https immediately
 return 301 https://$host$request_uri;
