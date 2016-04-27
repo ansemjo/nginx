@@ -1,6 +1,6 @@
-# for include in a server block
-
 ssl	on;
-ssl_certificate         /etc/letsencrypt/live/www.semjonov.de/fullchain.pem;
-ssl_certificate_key     /etc/letsencrypt/live/www.semjonov.de/privkey.pem;
+ssl_certificate         /etc/letsencrypt/live/TEMPLATE.FQDN/fullchain.pem;
+ssl_certificate_key     /etc/letsencrypt/live/TEMPLATE.FQDN/privkey.pem;
+
 include parameters/ssl;
+include snippets/ssl_headers_add;
