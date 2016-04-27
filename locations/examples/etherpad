@@ -1,5 +1,7 @@
 # see: https://github.com/ether/etherpad-lite/wiki/How-to-put-Etherpad-Lite-behind-a-reverse-Proxy#hosted-at--with-friendly-urls-for-pads
 
+# TODO: try to use set $variable $value for proxy pass here ?
+
 # Allow normal files to pass through
 location ~ ^/(locales/|locales.json|admin/|static/|pluginfw/|javascripts/|socket.io/|ep/|minified/|api/|ro/|error/|jserror/|favicon.ico|robots.txt) {
     proxy_buffering off;

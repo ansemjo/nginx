@@ -1,7 +1,8 @@
 # use something like the following in your location to include php:
 #
+#   location ~ \.php/?.*$ { # or:
 #   location ~ ^/alias_here/\.php/?.*$ {
-#       include locations//php_socket;
+#       include snippets/fastcgi.sock;
 #   }
 
 # regex to split $uri to $fastcgi_script_name and $fastcgi_path
@@ -15,6 +16,7 @@ try_files $fastcgi_script_name =404;
 set $path_info $fastcgi_path_info;
 fastcgi_param PATH_INFO $path_info;
 
+include parameters/fastcgi;
+
 fastcgi_pass unix:/var/run/php5-fpm.sock;
 fastcgi_index index.php;
-include parameters/fastcgi;

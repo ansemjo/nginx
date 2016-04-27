@@ -1,7 +1,0 @@
-# this works only for locations which can be reached
-# with their exact name from the web root ..
-# i.e. http://.../cloud/ needs to be in /var/www/cloud/ etc.
-
-location ~ \.php/?.*$ {
-    include locations//php_socket;
-}
