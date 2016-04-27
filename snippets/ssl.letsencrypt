@@ -3,4 +3,4 @@ ssl_certificate         /etc/letsencrypt/live/TEMPLATE.FQDN/fullchain.pem;
 ssl_certificate_key     /etc/letsencrypt/live/TEMPLATE.FQDN/privkey.pem;
 
 include parameters/ssl;
-include snippets/ssl_headers_add;
+include snippets/sslheaders.add;
