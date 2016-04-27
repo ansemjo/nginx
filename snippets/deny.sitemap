@@ -1,0 +1,4 @@
+# deny access to sitemap.xml
+location ^~ /sitemap.xml {
+    return 404;
+}
