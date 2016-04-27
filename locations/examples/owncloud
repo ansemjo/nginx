@@ -29,7 +29,7 @@ location /owncloud {
 
     rewrite ^(/core/doc/[^\/]+/)$ $1/index.php;
 
-    root /var/www;
+    root /srv/http;
     include locations/php_handler;
     try_files $uri $uri/ index.php;
 

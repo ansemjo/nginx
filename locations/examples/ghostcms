@@ -13,6 +13,6 @@ location @ghostnode {
     proxy_redirect off;
 
     #proxy_pass http://localhost:9080;
-    proxy_pass http://unix:/var/www/ghost/ghostcms.sock:;
+    proxy_pass http://unix:/srv/http/ghost/ghostcms.sock:;
 
 }

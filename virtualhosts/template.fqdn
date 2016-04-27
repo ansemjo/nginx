@@ -13,7 +13,7 @@ server {
 
     include snippets/ssl.PROVIDER;
 
-    root    /var/www/common;
+    root    /srv/http/common;
     index   index.php index.html index.htm index.txt;
 
     include locations/enabled/common/*;
