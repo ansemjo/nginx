@@ -25,5 +25,5 @@ location / {
     proxy_pass http://etherpad-lite/p/;
     proxy_redirect / /p/;
     proxy_pass_header Server;
-    include parameters/proxy;
+    include params/proxy;
 }

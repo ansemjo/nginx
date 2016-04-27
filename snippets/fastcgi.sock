@@ -16,7 +16,7 @@ try_files $fastcgi_script_name =404;
 set $path_info $fastcgi_path_info;
 fastcgi_param PATH_INFO $path_info;
 
-include parameters/fastcgi;
+include params/fastcgi;
 
 fastcgi_pass unix:/var/run/php5-fpm.sock;
 fastcgi_index index.php;

@@ -1,5 +1,7 @@
 # nginx configuration
 
+> this readme is outdated for the 'generic' branch!
+
 This is the configuration folder for [semjonov.de](https://www.semjonov.de/) and its subdomains. These files would normally be found in `/etc/nginx` in a [LEMP stack](https://lemp.io/) (using [nginx](https://www.nginx.com/resources/wiki/start/topics/examples/full/)).
 
 After trying a few approaches I decided to finally clean up the mess and do as much as possible with includes and symlinks to reduce the amount of redundant configuration.
