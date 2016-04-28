@@ -1,0 +1,35 @@
+set $ghosthome "/srv/ghostcms";
+set $ghosttheme "casper";
+set $ghostsocket http://unix:$ghosthome/ghost.sock:;
+
+error_page 403 404 /404/;
+
+location ~ /(\.ht|README|LICENSE) {
+    deny all; }
+
+location /content/images {
+    root $ghosthome;
+    expires max; }
+
+location /assets {
+    root $ghosthome/content/themes/$ghosttheme;
+    expires max; }
+
+location /public {
+    root $ghosthome/core/built;
+    expires max; }
+
+location /ghost/scripts {
+    alias $ghosthome/core/built/scripts;
+    expires max; }
+
+location / {
+    include params/proxy;
+    proxy_pass $ghostsocket;
+}
+
+location ~ ^/(?:ghost|signout) {
+    include params/proxy;
+    proxy_cache off;
+    proxy_pass $ghostsocket;
+}
