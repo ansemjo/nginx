@@ -1,17 +1,10 @@
 server {
 
     listen [::]:80;
+    listen [::]:443 ssl;
     server_name TEMPLATE.FQDN;
 
     include snippets/redirection.https;
-}
-
-server {
-
-    listen [::]:443;
-    server_name TEMPLATE.FQDN;
-
-    include snippets/ssl.PROVIDER;
 
     include locations/enabled/default/*;
     include locations/enabled/TEMPLATE.FQDN/*;
