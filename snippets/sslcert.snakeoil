@@ -4,5 +4,5 @@
 ssl_certificate         /etc/ssl/certs/ssl-cert-snakeoil.pem;
 ssl_certificate_key     /etc/ssl/private/ssl-cert-snakeoil.key;
 
-include params/ssl;
-#include snippets/sslheaders.add; # maybe you do not want HSTS on a testing setup ..
+include snippets/secureheaders.add;
+add_header Strict-Transport-Security "";
