@@ -4,5 +4,4 @@
 ssl_certificate         /etc/ssl/certs/ssl-cert-snakeoil.pem;
 ssl_certificate_key     /etc/ssl/private/ssl-cert-snakeoil.key;
 
-include snippets/secureheaders.add;
 add_header Strict-Transport-Security "";

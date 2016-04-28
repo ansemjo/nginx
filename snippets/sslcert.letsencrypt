@@ -1,4 +1,2 @@
 ssl_certificate         /etc/letsencrypt/live/hetzmett.semjonov.de/fullchain.pem;
 ssl_certificate_key     /etc/letsencrypt/live/hetzmett.semjonov.de/privkey.pem;
-
-include snippets/secureheaders.add;
