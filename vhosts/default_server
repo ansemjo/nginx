@@ -6,4 +6,6 @@ server {
 
     include snippets/redirection.to_hostname;
 
+    include locations/enabled/default/*;
+
 }
