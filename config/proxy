@@ -1,0 +1,12 @@
+proxy_set_header Host $http_host;
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header X-Forwarded-Proto $scheme;
+include snippets/secureheaders.proxyhide;
+
+proxy_cache_path /var/run/nginx levels=1:2 keys_zone=PROXY:32m inactive=2h max_size=128m;
+proxy_cache_valid 301 1h;
+proxy_cache_valid 200 302 10m;
+proxy_cache_valid any 1m;
+
+add_header X-Cache $upstream_cache_status;

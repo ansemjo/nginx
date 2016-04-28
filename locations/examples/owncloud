@@ -1,6 +1,6 @@
 location /owncloud {
 
-    include snippets/ssl_headers_empty;
+    include snippets/secureheaders.empty;
     add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; preload";
 
     client_max_body_size 10G;

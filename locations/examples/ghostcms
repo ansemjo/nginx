@@ -1,18 +1,35 @@
+set $ghosthome "/srv/ghostcms";
+set $ghosttheme "casper";
+set $ghostsocket http://unix:$ghosthome/ghost.sock:;
+
+error_page 403 404 /404/;
+
+location ~ /(\.ht|README|LICENSE) {
+    deny all; }
+
+location /content/images {
+    root $ghosthome;
+    expires max; }
+
+location /assets {
+    root $ghosthome/content/themes/$ghosttheme;
+    expires max; }
+
+location /public {
+    root $ghosthome/core/built;
+    expires max; }
+
+location /ghost/scripts {
+    alias $ghosthome/core/built/scripts;
+    expires max; }
+
 location / {
-
-    try_files $uri @ghostnode;
-
+    proxy_cache PROXY;
+    proxy_ignore_headers X-Accel-Expires Expires Cache-Control;
+    proxy_pass $ghostsocket;
 }
 
-location @ghostnode {
-
-    include params/proxy;
-
-    proxy_read_timeout 300;
-    proxy_connect_timeout 300;
-    proxy_redirect off;
-
-    #proxy_pass http://localhost:9080;
-    proxy_pass http://unix:/srv/http/ghost/ghostcms.sock:;
-
+location ~ ^/(?:ghost|signout) {
+    proxy_cache off;
+    proxy_pass $ghostsocket;
 }

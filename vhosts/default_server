@@ -5,6 +5,7 @@ server {
     server_name _;
 
     include snippets/redirection.to_hostname;
+    include snippets/redirection.https;
 
     include locations/enabled/default/*;
 
