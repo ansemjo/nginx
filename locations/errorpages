@@ -1,0 +1,48 @@
+error_page 400 401 403 404 500 502 503 504 @errordocs;
+
+location @errordocs {
+    try_files /.error-docs/$uri /.error-docs/$status.html;
+}
+
+location /.error-docs/ {
+    add_header Content-Type text/html;
+    return 200 "
+<!doctype html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <title>$status_text</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        * { 
+            line-height: 1.2;
+            margin: 0; }
+        html { color: #888;
+            display: table;
+            font-family: sans-serif;
+            height: 100%;
+            text-align: center;
+            width: 100%; }
+        body { display: table-cell;
+            vertical-align: middle;
+            margin: 2em auto; }
+        h1 { color: #555;
+            font-size: 3em;
+            font-weight: 400; }
+        p { padding-top: 1em;
+            margin: 0 auto;
+            width: 275px;
+            text-align: justify; }
+        @media only screen and (max-width: 280px) {
+            body, p { width: 95%; }
+            h1 { font-size: 1.5em; margin: 0 0 0.3em; } }
+    </style>
+</head>
+<body>
+    <h1>$status</h1>
+    <h1>$status_text</h1>
+    <p>$status_issue</p>
+</body>
+</html>
+<!-- IE needs 512+ bytes: http://blogs.msdn.com/b/ieinternals/archive/2010/08/19/http-error-pages-in-internet-explorer.aspx -->";
+}
