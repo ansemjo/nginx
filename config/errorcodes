@@ -1,0 +1,33 @@
+# mostly taken from http://www.restapitutorial.com/httpstatuscodes.html
+
+map $status $status_text {
+
+    default "Unspecified Error";
+
+    400 "Bad Request";
+    401 "Unauthorized";
+    403 "Forbidden";
+    404 "Not Found";
+
+    500 "Internal Server Error";
+    502 "Bad Gateway";
+    503 "Service Unavailable";
+    504 "Gateway Timeout";
+
+}
+
+map $status $status_issue {
+
+    default "Uknown Issue";
+
+    400 "The request could not be understood by the server due to malformed syntax.";
+    401 "The request requires user authentication.<br />If the request included Authorization credentials, then this error indicates that authorization has been refused for those credentials.";
+    403 "The server understood the request but is refusing to fulfill it.";
+    404 "The server has not found anything matching the Request-URI.";
+
+    500 "The server encountered an unexpected condition which prevented it from fulfilling the request.";
+    502 "The server, while acting as a gateway or proxy, received an invalid response from the upstream server it accessed in attempting to fulfill the request.";
+    503 "The server is currently unable to handle the request due to a temporary overloading or maintenance of the server.";
+    504 "The server, while acting as a gateway or proxy, did not receive a timely response from the upstream server it needed to access in attempting to complete the request.";
+
+}
