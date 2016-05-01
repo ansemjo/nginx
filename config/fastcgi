@@ -1,3 +1,6 @@
+# you must set the fastcgi socket per server with this:
+# set $fastcgi_socket "/run/php-fpm/default.sock";
+
 fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;
 fastcgi_param  QUERY_STRING       $query_string;
 fastcgi_param  REQUEST_METHOD     $request_method;
