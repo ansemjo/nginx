@@ -1,9 +1,15 @@
-# you must set the fastcgi socket per server with this:
+# you can set different sockets per location with:
 # set $fastcgi_socket "/run/php-fpm/default.sock";
+# otherwise, use the map by $server_name below
 
 map $scheme $fastcgi_https {
     default off;
     https on;
+}
+
+map $server_name $fastcgi_socket {
+    default "/run/php-fpm/default.sock";
+    template.fqdn "/path/to/other/pool.sock";
 }
 
 fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;
