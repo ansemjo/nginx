@@ -4,8 +4,6 @@ server {
     listen [::]:443 default_server ipv6only=off ssl;
     server_name _;
 
-    set $fastcgi_socket "/run/php-fpm/default.sock";
-
     include snippets/redirection.to_hostname;
     include snippets/redirection.https;
 
