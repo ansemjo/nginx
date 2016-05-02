@@ -3,12 +3,16 @@ location /owncloud {
     include snippets/secureheaders.empty;
     add_header Strict-Transport-Security "max-age=63072000; includeSubdomains; preload";
 
+    root /var/www;
+
     client_max_body_size 10G;
     fastcgi_buffers 64 4K;
 
     rewrite ^/owncloud/caldav(.*)$ /owncloud/remote.php/caldav$1 redirect;
     rewrite ^/owncloud/carddav(.*)$ /owncloud/remote.php/carddav$1 redirect;
     rewrite ^/owncloud/webdav(.*)$ /owncloud/remote.php/webdav$1 redirect;
+    rewrite ^/owncloud/.well-known/carddav /owncloud/remote.php/carddav/ redirect;
+    rewrite ^/owncloud/.well-known/caldav /owncloud/remote.php/caldav/ redirect;
 
     index index.php;
     error_page 403 = /owncloud/core/templates/403.php;
@@ -24,13 +28,12 @@ location /owncloud {
         deny all;
     }
 
-    rewrite ^/owncloud/.well-known/carddav /owncloud/remote.php/carddav/ redirect;
-    rewrite ^/owncloud/.well-known/caldav /owncloud/remote.php/caldav/ redirect;
-
     rewrite ^(/core/doc/[^\/]+/)$ $1/index.php;
 
-    root /srv/http;
-    include locations/php_handler;
     try_files $uri $uri/ index.php;
+
+    location ~ \.php/?.*$ {
+        include snippets/fastcgi.sock;
+    }
 
 }
