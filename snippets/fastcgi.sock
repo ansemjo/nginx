@@ -1,16 +1,12 @@
 # use something like the following in your location to include php:
 #
-#   location ~ \.php/?.*$ { # or:
-#   location ~ ^/alias_here/\.php/?.*$ {
+#   location ~ \.php/?.*$ {
 #       include snippets/fastcgi.sock;
 #   }
 
-fastcgi_split_path_info ^(.+\.php)(/.+)$;
-set $fastcgi_path_info_temp $fastcgi_path_info;
+fastcgi_split_path_info ^(.+\.php)(.*)$;
 
 try_files $fastcgi_script_name =404;
-
-fastcgi_param PATH_INFO $fastcgi_path_info_temp;
 
 fastcgi_pass unix:$fastcgi_socket;
 fastcgi_index index.php;
