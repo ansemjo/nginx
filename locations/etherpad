@@ -1,29 +1,33 @@
-# see: https://github.com/ether/etherpad-lite/wiki/How-to-put-Etherpad-Lite-behind-a-reverse-Proxy#hosted-at--with-friendly-urls-for-pads
+set $etherpad "ip:port";
 
-# TODO: try to use set $variable $value for proxy pass here ?
-
-# Allow normal files to pass through
-location ~ ^/(locales/|locales.json|admin/|static/|pluginfw/|javascripts/|socket.io/|ep/|minified/|api/|ro/|error/|jserror/|favicon.ico|robots.txt) {
-    proxy_buffering off;
-    proxy_pass http://etherpad-lite;
-}
-
-# Redirect to force /p/* URLs to the friendly version
-location /p/ {
-    rewrite ^/p/(.*) /$1 redirect;
-}
-
-# Match the home page
-location ~ ^/$ {
-    proxy_buffering off;
-    proxy_pass http://etherpad-lite;
-}
-
-# Handle pad URLs here
 location / {
-    proxy_buffering off;
-    proxy_pass http://etherpad-lite/p/;
-    proxy_redirect / /p/;
+
+    rewrite ^/$ / break;
+    rewrite ^/locales/(.*) /locales/$1 break;
+    rewrite ^/locales.json /locales.json break;
+    rewrite ^/admin(.*) /admin/$1 break;
+    rewrite ^/p/(.*) /p/$1 break;
+    rewrite ^/static/(.*) /static/$1 break;
+    rewrite ^/pluginfw/(.*) /pluginfw/$1 break;
+    rewrite ^/javascripts/(.*) /javascripts/$1 break;
+    rewrite ^/socket.io/(.*) /socket.io/$1 break;
+    rewrite ^/ep/(.*) /ep/$1 break;
+    rewrite ^/minified/(.*) /minified/$1 break;
+    rewrite ^/api/(.*) /api/$1 break;
+    rewrite ^/ro/(.*) /ro/$1 break;
+    rewrite ^/error/(.*) /error/$1 break;
+    rewrite ^/jserror(.*) /jserror$1 break;
+    rewrite /favicon.ico /favicon.ico break;
+    rewrite /robots.txt /robots.txt break;
+    rewrite /(.*) /p/$1;
+
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $remote_addr;
+    proxy_http_version 1.1;
     proxy_pass_header Server;
-    include params/proxy;
+    proxy_pass http://$etherpad;
+
 }
+
+# https://github.com/ether/etherpad-lite/wiki/How-to-put-Etherpad-Lite-behind-a-reverse-Proxy#hosted-at--with-rewrite-rules-to-allow-padname
