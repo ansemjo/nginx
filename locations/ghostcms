@@ -24,6 +24,10 @@ location /ghost/scripts {
     expires max; }
 
 location / {
+    try_files $uri @ghost;
+}
+
+location @ghost {
     proxy_cache PROXY;
     proxy_ignore_headers X-Accel-Expires Expires Cache-Control;
     proxy_pass $ghostsocket;
