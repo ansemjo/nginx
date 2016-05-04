@@ -1,0 +1,12 @@
+server {
+
+    listen [::]:80;
+    listen [::]:443 ssl;
+    server_name semjonov.de www.semjonov.de;
+
+    include snippets/redirection.https;
+
+    include locations/enabled/default/*;
+    include locations/enabled/semjonov.de/*;
+
+}
