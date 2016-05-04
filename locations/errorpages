@@ -4,7 +4,7 @@ location @errordocs {
     try_files /.error-docs/$uri /.error-docs/$status.html;
 }
 
-location /.error-docs/ {
+location ~ ^/.error-docs/ {
     add_header Content-Type text/html;
     return 200 "
 <!doctype html>

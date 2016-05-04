@@ -1,0 +1,3 @@
+location ~ ^/owncloud {
+    rewrite ^/owncloud/(.*)$ https://own.semjonov.de/$1;
+}
