@@ -1,10 +1,6 @@
-error_page 400 401 403 404 500 502 503 504 @errordocs;
+error_page 400 401 403 404 500 502 503 504 /.error-docs/nope.html;
 
-location @errordocs {
-    try_files /.error-docs/$uri /.error-docs/$status.html;
-}
-
-location ~ ^/.error-docs/ {
+location ~ ^/.error-docs/nope.html {
     add_header Content-Type text/html;
     return 200 "
 <!doctype html>

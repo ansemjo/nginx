@@ -3,6 +3,7 @@
 map $status $status_text {
 
     default "Unspecified Error";
+    200 "Success";
 
     400 "Bad Request";
     401 "Unauthorized";
@@ -18,7 +19,8 @@ map $status $status_text {
 
 map $status $status_issue {
 
-    default "Uknown Issue";
+    default "Well, this should not happen.";
+    200 "The request was understood and served. This exactly what you requested.";
 
     400 "The request could not be understood by the server due to malformed syntax.";
     401 "The request requires user authentication.<br />If the request included Authorization credentials, then this error indicates that authorization has been refused for those credentials.";
