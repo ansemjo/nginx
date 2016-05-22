@@ -33,7 +33,7 @@ location @ghost {
     proxy_pass $ghostsocket;
 }
 
-location ~ ^/(?:ghost|signout) {
+location ~ ^/(?:ghost|signout|p/) {
     proxy_cache off;
     proxy_pass $ghostsocket;
 }
