@@ -1,7 +1,7 @@
 server {
 
-    listen [::]:80 default_server ipv6only=off;
-    listen [::]:443 default_server ipv6only=off ssl;
+    listen [::]:80  default_server ipv6only=off;
+    listen [::]:443 default_server ipv6only=off ssl http2;
     server_name _;
 
     include snippets/redirection.to_hostname;
