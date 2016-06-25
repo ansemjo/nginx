@@ -1,0 +1,5 @@
+location ~* / {
+    set $status_text "Under Maintenance";
+    set $status_issue "This server is currently undergoing maintenance activity. Service will hopefully resume soon.";
+    return 503;
+}
