@@ -1,4 +1,4 @@
-set $ghosthome "/srv/ghostcms";
+set $ghosthome "/srv/ghost";
 set $ghosttheme "casper";
 set $ghostsocket http://unix:$ghosthome/ghost.sock:;
 
