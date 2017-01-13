@@ -1,5 +1,5 @@
-set $ghosthome "/srv/ghost";
-set $ghosttheme "casper";
+set $ghosthome "/var/lib/ghost";
+set $ghosttheme "beautiful-ghost";
 set $ghostsocket http://unix:$ghosthome/ghost.sock:;
 
 error_page 403 404 /404/;
