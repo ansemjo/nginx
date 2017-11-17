@@ -9,4 +9,6 @@ server {
     include locations/enabled/default/*;
     include locations/enabled/semjonov.de/*;
 
+    root /srv/http/semjonov.de/dist/;
+
 }
