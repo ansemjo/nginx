@@ -15,7 +15,7 @@ location ~ ^/.error-docs/nope.html {
             margin: 0; }
         html { color: #888;
             display: table;
-            font-family: sans-serif;
+            font-family: mono;
             height: 100%;
             text-align: center;
             width: 100%; }
@@ -39,6 +39,5 @@ location ~ ^/.error-docs/nope.html {
     <h1>$status_text</h1>
     <p>$status_issue</p>
 </body>
-</html>
-<!-- IE needs 512+ bytes: http://blogs.msdn.com/b/ieinternals/archive/2010/08/19/http-error-pages-in-internet-explorer.aspx -->";
+</html>";
 }
