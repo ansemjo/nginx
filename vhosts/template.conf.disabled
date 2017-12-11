@@ -6,7 +6,7 @@ server {
 
     include snippets/redirection.https;
 
-    include locations/enabled/default/*;
-    include locations/enabled/TEMPLATE.FQDN/*;
+    include vhosts/default.d/*;
+    include vhosts/template.d/*;
 
 }

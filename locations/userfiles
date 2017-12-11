@@ -1,0 +1,4 @@
+location ~ ^/~(.+?)(/.*)?$ {
+  alias /home/$1/www$2;
+  #autoindex on;
+}
