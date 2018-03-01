@@ -1,0 +1,2 @@
+ssl_certificate         /etc/letsencrypt/live/testing.semjonov.de/fullchain.pem;
+ssl_certificate_key     /etc/letsencrypt/live/testing.semjonov.de/privkey.pem;
