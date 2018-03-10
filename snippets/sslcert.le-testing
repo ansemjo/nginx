@@ -1,2 +1,0 @@
-ssl_certificate         /var/lib/acme/live/testing.semjonov.de/fullchain;
-ssl_certificate_key     /var/lib/acme/live/testing.semjonov.de/privkey;

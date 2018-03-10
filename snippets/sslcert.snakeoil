@@ -1,7 +1,0 @@
-# if these certs are not present on your system, you can regenerate with:
-# openssl req -x509 -nodes -days 30 -newkey rsa:2048 -keyout /etc/ssl/private/ssl-cert-snakeoil.key -out /etc/ssl/certs/ssl-cert-snakeoil.pem
-
-ssl_certificate         /etc/ssl/certs/ssl-cert-snakeoil.pem;
-ssl_certificate_key     /etc/ssl/private/ssl-cert-snakeoil.key;
-
-add_header Strict-Transport-Security "";
