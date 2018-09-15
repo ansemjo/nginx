@@ -8,12 +8,12 @@ server {
 
   listen [::]:80;
   listen [::]:443 ssl http2;
-  server_name offenerbrief.qnoc.de;
+  server_name offenerbrief.semjonov.de;
 
-  root /srv/www/offenerbrief;
+  root /dev/null;
 
-  ssl_certificate     /etc/letsencrypt/live/offenerbrief.qnoc.de/fullchain.pem;
-  ssl_certificate_key /etc/letsencrypt/live/offenerbrief.qnoc.de/privkey.pem;
+  ssl_certificate     /etc/letsencrypt/live/offenerbrief.semjonov.de/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/offenerbrief.semjonov.de/privkey.pem;
 
   include snippets/redirect/to_https.conf;
 
