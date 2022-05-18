@@ -39,11 +39,7 @@ server {
   include vhosts/application.d/*.conf;
 
   location / {
-    proxy_http_version 1.1;
-    proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header Connection 'upgrade';
-    proxy_set_header Host $host;
-    proxy_ignore_headers X-Accel-Expires Expires Cache-Control;
+    include snippets/proxypass.conf;
     proxy_pass http://my_application;
   }
 
