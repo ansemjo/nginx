@@ -1,4 +1,4 @@
 vhosts/*
 !vhosts/common.d/
 !vhosts/default.conf
-!vhosts/examples.conf
+!vhosts/examples

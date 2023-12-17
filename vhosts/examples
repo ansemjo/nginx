@@ -31,8 +31,8 @@ server {
   listen [::]:443 ssl http2;
   server_name app.example.com;
 
-  ssl_certificate     /etc/letsencrypt/live/wiki.wool.qnoc.de/fullchain.pem;
-  ssl_certificate_key /etc/letsencrypt/live/wiki.wool.qnoc.de/privkey.pem;
+  ssl_certificate     /etc/letsencrypt/live/example.com/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
   include snippets/redirect/to_https.conf;
 
   include vhosts/common.d/*.conf;
