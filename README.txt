@@ -9,5 +9,5 @@ the entire configuration into one generic hierarchy and told git to ignore
 new files in vhosts/. So, your specific server configuration is not tracked
 and therefore not backed up in git.
 
-Example server blocks can be found in vhosts/example.conf. This file is not
+Example server blocks can be found in vhosts/example. This file is not
 included by nginx, don't worry, no need to delete it.
